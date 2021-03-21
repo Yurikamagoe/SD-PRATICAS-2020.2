@@ -24,7 +24,6 @@ public class AdicionarPessoa {
 	JFrame frame;
 	private JTextField tf_name;
 	private JTextField tf_age;
-	private static String api = "localhost:8080/api/people";
 	
 	/**
 	 * Launch the application.

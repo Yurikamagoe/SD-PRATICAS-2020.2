@@ -7,6 +7,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.example.crateus.model.Person;
+
 import java.awt.Color;
 import javax.swing.BoxLayout;
 import javax.swing.JTextField;
@@ -21,6 +24,8 @@ import javax.swing.JList;
 public class EnviarMensagens extends JFrame {
 
 	private JPanel contentPane;
+	
+	
 
 	/**
 	 * Launch the application.
@@ -43,7 +48,7 @@ public class EnviarMensagens extends JFrame {
 	 */
 	public EnviarMensagens() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 482, 309);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(192, 192, 192));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -61,5 +66,29 @@ public class EnviarMensagens extends JFrame {
 		JList list = new JList();
 		list.setBounds(27, 12, 287, 193);
 		contentPane.add(list);
+		
+		JLabel lblNome = new JLabel("ID:");
+		lblNome.setBounds(326, 56, 33, 15);
+		contentPane.add(lblNome);
+		
+		JLabel lblIdade = new JLabel("Idade:");
+		lblIdade.setBounds(326, 122, 70, 15);
+		contentPane.add(lblIdade);
+		
+		JLabel lblNome_1 = new JLabel("Nome:");
+		lblNome_1.setBounds(326, 83, 70, 15);
+		contentPane.add(lblNome_1);
+		
+		JLabel lb_id = new JLabel(""+EscolherPessoa.person.getId());
+		lb_id.setBounds(371, 53, 59, 18);
+		contentPane.add(lb_id);
+		
+		JLabel lb_name = new JLabel(""+EscolherPessoa.person.getName());
+		lb_name.setBounds(381, 71, 89, 27);
+		contentPane.add(lb_name);
+		
+		JLabel lb_age = new JLabel(""+EscolherPessoa.person.getAge());
+		lb_age.setBounds(391, 110, 89, 27);
+		contentPane.add(lb_age);
 	}
 }
