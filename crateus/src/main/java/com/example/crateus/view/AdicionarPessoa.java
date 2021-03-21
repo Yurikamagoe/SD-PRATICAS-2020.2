@@ -1,4 +1,6 @@
 package com.example.crateus.view;
+import javax.swing.*;
+
 
 import java.awt.EventQueue;
 
@@ -19,7 +21,7 @@ import java.awt.event.ActionEvent;
 
 public class AdicionarPessoa {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField tf_name;
 	private JTextField tf_age;
 	private static String api = "localhost:8080/api/people";

@@ -1,4 +1,5 @@
 package com.example.crateus.view;
+import javax.swing.*;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

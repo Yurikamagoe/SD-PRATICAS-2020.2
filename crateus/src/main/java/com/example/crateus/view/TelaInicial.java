@@ -1,4 +1,6 @@
 package com.example.crateus.view;
+import javax.swing.*;
+import javax.swing.*;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -14,8 +16,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class TelaInicial extends JFrame {
-
 	private JPanel contentPane;
+
 
 	/**
 	 * Launch the application.
@@ -50,12 +52,23 @@ public class TelaInicial extends JFrame {
 		panel.setLayout(null);
 		
 		JButton btnEnviarMensagens = new JButton("Enviar Mensagens");
+		btnEnviarMensagens.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+				EnviarMensagens envMensagem = new EnviarMensagens();
+				envMensagem.setVisible(true);
+			}
+		});
 		btnEnviarMensagens.setBounds(135, 88, 173, 25);
 		panel.add(btnEnviarMensagens);
 		
 		JButton btnCadastrarUsuário = new JButton("Cadastrar Usuário");
 		btnCadastrarUsuário.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
+				dispose();
+				AdicionarPessoa adPessoa = new AdicionarPessoa();
+				adPessoa.frame.setVisible(true);
 			}
 		});
 		btnCadastrarUsuário.setBounds(135, 128, 173, 25);
