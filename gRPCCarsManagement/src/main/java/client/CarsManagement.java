@@ -38,8 +38,7 @@ public class CarsManagement extends JFrame {
 	private JTable tb_cars;
 
 	List<Car> car = new ArrayList<>();
-	public static int id = 0;
-
+	
 	private void criaJTable() {
 		DefaultTableModel modelo = new DefaultTableModel();
 

@@ -33,9 +33,6 @@ public class AddCar extends JFrame {
 	private JTextField tf_modelYear;
 	private JTextField tf_price;
 
-	
-	
-
 	/**
 	 * Launch the application.
 	 */
@@ -56,7 +53,7 @@ public class AddCar extends JFrame {
 	 * Create the frame.
 	 */
 	public AddCar() {
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -120,27 +117,13 @@ public class AddCar extends JFrame {
 				ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051).usePlaintext().build();
 				CarServiceGrpc.CarServiceBlockingStub carClient = CarServiceGrpc.newBlockingStub(channel);
 
-				if (CarsManagement.id == 0) {
-
-					// CREATE CAR
-					Car car = Car.newBuilder().setName(tf_name.getText()).setBrand(tf_brand.getText())
-							.setManufacturingYear(tf_manufacturingYear.getText()).setModelYear(tf_modelYear.getText())
-							.setPrice(Double.parseDouble(tf_price.getText())).build();
-					CreateCarResponse createCarResponse = carClient
-							.createCar(CreateCarRequest.newBuilder().setCar(car).build());
-					System.out.println(createCarResponse.toString());
-
-				} else {
-					
-					Car car = Car.newBuilder().setName(tf_name.getText()).setBrand(tf_brand.getText())
-							.setManufacturingYear(tf_manufacturingYear.getText()).setModelYear(tf_modelYear.getText())
-							.setPrice(Double.parseDouble(tf_price.getText())).build();
-					UpdateCarResponse updateCarResponse = carClient
-							.updateCar(UpdateCarRequest.newBuilder().setCar(car).build());
-					System.out.println(updateCarResponse.toString());
-					CarsManagement.id = 0;
-
-				}
+				// CREATE CAR
+				Car car = Car.newBuilder().setName(tf_name.getText()).setBrand(tf_brand.getText())
+						.setManufacturingYear(tf_manufacturingYear.getText()).setModelYear(tf_modelYear.getText())
+						.setPrice(Double.parseDouble(tf_price.getText())).build();
+				CreateCarResponse createCarResponse = carClient
+						.createCar(CreateCarRequest.newBuilder().setCar(car).build());
+				System.out.println(createCarResponse.toString());
 
 				CarsManagement home = new CarsManagement();
 				home.setVisible(true);
